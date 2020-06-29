@@ -47,3 +47,10 @@ spring:
 mytest:
   name: cookie
   age: 25
+local:
+  host: 127.0.0.1
+  port: 8080
+myserver:
+  port: 33
+  url: eweqw
+  brand: cccc
