@@ -43,3 +43,7 @@ spring:
     allow-bean-definition-overriding: true #设置为true，表示后发现的bean会覆盖之前相同名称的bean。
   application:
     name: sharing-sphere-server
+
+mytest:
+  name: cookie
+  age: 25

@@ -1,5 +1,7 @@
 package com.sharding.demo.controller;
 
+import com.sharding.demo.config.MyConfig;
+import com.sharding.demo.config.MyTestProperties;
 import com.sharding.demo.model.UserInfo;
 import com.sharding.demo.service.UserInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,10 @@ import java.util.List;
  */
 @RestController
 public class UserController {
+    @Autowired
+    private MyConfig myConfig;
+    @Autowired
+    private MyTestProperties myTestProperties;
  
     @Autowired
     private UserInfoService userService;
@@ -29,5 +35,14 @@ public class UserController {
     public int insert(UserInfo user) {
         return userService.save(user);
     }
+
+    @GetMapping("/select/config")
+    public void selectConfig() {
+        System.out.println(myConfig.getName());
+        System.out.println(myConfig.getAge());
+        System.out.println("myTestProperties name= " + myTestProperties.getName());
+        System.out.println("myTestProperties age= " + myTestProperties.getAge());
+    }
+
 
 }
